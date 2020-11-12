@@ -27,12 +27,24 @@
     <ClCompile Include="example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="example.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
