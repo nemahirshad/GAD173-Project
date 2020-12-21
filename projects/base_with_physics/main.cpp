@@ -6,7 +6,8 @@ using namespace std;
 
 int main()
 {
-	Example::inst().run();
+	Example example;
+	example.run();
 
 	return 0;
 }

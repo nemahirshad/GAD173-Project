@@ -2,13 +2,11 @@
 #include "Tiles.h"
 #include <iostream>
 
-#define cout std::cout<<
-#define end <<std::endl
 #define gridSizeX 19
 #define gridSizeY 10
 #define gridSpriteSize 46
-#define lineLengthX 505.0f
-#define lineLengthY 825.0f 
+#define lineLengthY 505.0f
+#define lineLengthX 825.0f 
 #define spriteScale 0.05f
 #define _red 1
 #define _blue 2 
@@ -35,21 +33,19 @@ bool Example::start()
 	sf::Vector2u resolution = m_backgroundSprite->getTexture()->getSize();
 	m_backgroundSprite->setScale(float(m_window.getSize().x) / resolution.x, float(m_window.getSize().y) / resolution.y);
 
-
 	//Draw grid
 	for (int y = 0; y < gridSizeY + 2; y++)
 	{
-		lines[y][0] = sf::RectangleShape(sf::Vector2f(lineLengthY, 1.0f));
-		lines[y][0].setFillColor(sf::Color::Red);
+		lines[y][0] = sf::RectangleShape(sf::Vector2f(lineLengthX, 1.0f));
+		lines[y][0].setFillColor(sf::Color::Magenta);
 		lines[y][0].setPosition(sf::Vector2f(0, gridSpriteSize * y));
 		pos[y][0] = sf::Vector2f(0, gridSpriteSize * y);
 
 		for (int x = 1; x < gridSizeX; x++)
 		{
-			lines[y][x] = sf::RectangleShape(sf::Vector2f(lineLengthX, 1.0f));
+			lines[y][x] = sf::RectangleShape(sf::Vector2f(1.0f, lineLengthY));
 			lines[y][x].setFillColor(sf::Color::Red);
 			lines[y][x].setPosition(sf::Vector2f(gridSpriteSize * x, 0));
-			lines[y][x].rotate(90);
 			pos[y][x] = sf::Vector2f(gridSpriteSize * x, gridSpriteSize * y);
 		}
 	}
@@ -69,8 +65,6 @@ bool Example::start()
 	blue.loadFromFile("data/Assets/BlueTile.jpg");
 	green.loadFromFile("data/Assets/GreenTile.jpg");
 	yellow.loadFromFile("data/Assets/YellowTile.jpg");
-
-	//music.openFromFile("data/Assets/Chocobo.mp3");
 
 	if (!music.openFromFile("data/Assets/Chocobo.ogg")) 
 	{

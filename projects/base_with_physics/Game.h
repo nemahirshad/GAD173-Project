@@ -1,46 +1,45 @@
 #pragma once
 
 #include "app.h"
+#include "kage2dutil/physics.h"
 #include "Tiles.h"
 
-class Example : public App
+class Game
 {
+private:
+	sf::RenderWindow& m_window;
+	sf::Sprite* m_backgroundSprite;
+	sf::Sprite paddle;
 public:
-	Example();
-	virtual ~Example();
+	Game(sf::RenderWindow& m_window);
+	virtual ~Game();
 	virtual bool start();
 	virtual void update(float deltaT);
 	virtual void render();
 	virtual void cleanup();
-	static Example &inst();
-
-	sf::Sprite *m_backgroundSprite;
 
 	sf::RectangleShape lines[12][21];
-	
+
 	sf::Vector2f pos[12][21];
 
 	sf::Vector2i index;
 
 	sf::Music music;
 
-	sf::Texture transparent;
 	sf::Texture red;
 	sf::Texture blue;
 	sf::Texture green;
 	sf::Texture yellow;
+	sf::Texture paddleTexture;
 
 	Tiles tiles[21][12];
 
 	int indexX;
 	int indexY;
-	int selection;
-	
-	int current;
+
+	int changeX = 0;
 
 	bool loaded;
 
-	void Example::Clear();
-	void Example::Save();
-	void Example::Load();
+	void Game::Load();
 };

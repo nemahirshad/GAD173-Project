@@ -2,17 +2,17 @@
 
 #include "app.h"
 #include "kage2dutil/physics.h"
-#include "SceneManager.h"
 
-class Example : public App
+class OptionsMenu
 {
+private:
+	sf::RenderWindow& m_window;
+	sf::Sprite* m_backgroundSprite;
 public:
-	Example();
-	virtual ~Example();
+	OptionsMenu(sf::RenderWindow& m_window);
+	virtual ~OptionsMenu();
 	virtual bool start();
 	virtual void update(float deltaT);
 	virtual void render();
 	virtual void cleanup();
-
-	SceneManager sceneManager;
 };
